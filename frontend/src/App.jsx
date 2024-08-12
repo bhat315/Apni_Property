@@ -8,9 +8,11 @@ import Profile from "./pages/Profile";
 import Header from "./components/Header";
 import PrivateRoute from "./components/PrivateRoute";
 import CreateListing from "./pages/CreateListing";
+import UserListings from "./pages/UserListings";
 import UpdateListing from "./pages/UpdateListing";
 import Listing from "./pages/Listing";
 import Search from "./pages/Search";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -28,12 +30,14 @@ export default function App() {
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
           <Route path="/create-listing" element={<CreateListing />} />
+          <Route path="/user-listings" element={<UserListings />} />
           <Route
             path="/update-listing/:listingId"
             element={<UpdateListing />}
           />
         </Route>
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
